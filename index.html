@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Name: Preston Wilson
+        Email: preston_wilson@student.uml.edu
+        Assignment: HW4 - Part 1
+        Description: This page validates multiplication table input with the
+        jQuery Validation plugin before creating a dynamic table.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4 Part 1 - jQuery Validation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="page-wrapper">
+        <header>
+            <h1>Dynamic Multiplication Table</h1>
+            <p>
+                Enter four whole numbers. The page will check the values with
+                the jQuery Validation plugin before building the table.
+            </p>
+        </header>
+
+        <section class="card">
+            <h2>Table Settings</h2>
+
+            <form id="tableForm" novalidate>
+                <div class="form-row">
+                    <label for="rowStart">Minimum row value</label>
+                    <input type="text" id="rowStart" name="rowStart" value="1">
+                    <span class="error-holder" id="rowStartError"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="rowEnd">Maximum row value</label>
+                    <input type="text" id="rowEnd" name="rowEnd" value="10">
+                    <span class="error-holder" id="rowEndError"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="colStart">Minimum column value</label>
+                    <input type="text" id="colStart" name="colStart" value="1">
+                    <span class="error-holder" id="colStartError"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="colEnd">Maximum column value</label>
+                    <input type="text" id="colEnd" name="colEnd" value="10">
+                    <span class="error-holder" id="colEndError"></span>
+                </div>
+
+                <button type="submit" id="makeTable">Create Table</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Table Output</h2>
+            <p id="statusMessage" class="status-message">
+                The table will appear here after valid numbers are submitted.
+            </p>
+            <div id="tableOutput" class="table-output"></div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
